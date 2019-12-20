@@ -9,7 +9,8 @@ facebook message parsing (format from ~dec 2019). simple per-person visuals
 * Should be ready in a couple of hours
 
 2. clone this repo; run the following commands in your terminal:
-```git clone https://github.com/divyashan/a_message_story.git;
+```
+git clone https://github.com/divyashan/a_message_story.git;
 cd a_message_story
 jupyter notebook
 ```
