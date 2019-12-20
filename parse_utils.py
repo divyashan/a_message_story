@@ -1,5 +1,6 @@
 from textblob import TextBlob
 from bs4 import BeautifulSoup
+import os
 
 #Parse out important info
 def reaction_check(msg):
