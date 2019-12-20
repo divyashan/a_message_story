@@ -1,6 +1,7 @@
 from textblob import TextBlob
 from bs4 import BeautifulSoup
 import os
+import numpy as np
 
 #Parse out important info
 def reaction_check(msg):
@@ -28,7 +29,7 @@ def map_to_month_no(date_str):
 def get_message_files_path(threads_dir, sender2):
     thread_names = os.listdir(threads_dir)
     rel_thread_names = [thread_name for thread_name in thread_names if (sender2.replace(' ', '') in thread_name)]
-    rel_thread_sizes = [os.listdir(threads_dir + '/' + thread_name) for thread_name in rel_thread_names]
-    
+    rel_thread_sizes = [len(os.listdir(threads_dir + '/' + thread_name)) for thread_name in rel_thread_names]
+
     thread_name = rel_thread_names[np.argsort(np.array(rel_thread_sizes))[-1]]
     return threads_dir + '/' + thread_name
