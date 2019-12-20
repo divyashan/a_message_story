@@ -23,3 +23,11 @@ def map_to_month_no(date_str):
     month_no_map = {'Jan': 1, 'Feb':2, 'Mar':3, 'Apr':4, 'May':5, 'Jun':6, 'Jul':7, 
                     'Aug':8, 'Sep':9, 'Oct':10, 'Nov':11, 'Dec':12}
     return month_no_map[month]
+
+def get_message_files_path(threads_dir, sender2):
+    thread_names = os.listdir(threads_dir)
+    rel_thread_names = [thread_name for thread_name in thread_names if (sender2.replace(' ', '') in thread_name)]
+    rel_thread_sizes = [os.listdir(threads_dir + '/' + thread_name) for thread_name in rel_thread_names]
+    
+    thread_name = rel_thread_names[np.argsort(np.array(rel_thread_sizes))[-1]]
+    return threads_dir + '/' + thread_name
