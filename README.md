@@ -1,8 +1,6 @@
 # a_message_story
 facebook message parsing (format from ~dec 2019). simple per-person visuals
 
-Visualize # of messages per month over time. 
-
 # how to
 
 update the following variables 
